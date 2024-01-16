@@ -22,6 +22,19 @@ var answersound = new Howl({
   }
 });
       
+var finishsound = new Howl({
+  src: ['https://matt.moses.name/sites/P34A/sounds/finishsounds.mp3'], // Replace with the path to your sound file
+  preload: true,
+  autoplay: false,
+  loop: false,
+  html5: true,
+  // onend: () => { answersound.unload(); },
+  sprite: {
+    bad: [0, 4574],    
+    good: [4720, 4475], 
+    great: [10053, 5665],
+  }
+});
 
 const statements = [
     { question: "People used dental floss in the old West.", answer: "Dental floss was invented in 1815 by a New Orleans dentist, showing that dental hygiene was a concern even in the old West.", isFact: true },
@@ -167,10 +180,13 @@ this.style.display = 'none';
 
         let resultMessage = "";
         if (percentCorrect >= 75) {
+            finishsound.play('great');
             resultMessage = "How'd you git so smart? You got " + percentCorrect.toFixed(2) + "% right!";
         } else if (percentCorrect >= 50) {
+            finishsound.play('good');
             resultMessage = "Pretty good! You got " + percentCorrect.toFixed(2) + "% right!";
         } else {
+            finishsound.play('bad');
             resultMessage = "Better do some more fancy book learnin'! Ya' only got "+ percentCorrect.toFixed(2) + "% right!";
         }
         document.getElementById("feedback").innerText = resultMessage;
@@ -183,4 +199,3 @@ document.getElementById("reset-button").addEventListener("click", resetGame);
 
 shuffleArray(statements); // Shuffle the statements at the start of the game
 displayStatement();
-
