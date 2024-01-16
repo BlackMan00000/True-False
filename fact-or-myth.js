@@ -5,7 +5,7 @@ var answersound = new Howl({
   autoplay: false,
   loop: false,
   html5: true,
-  onend: () => { answersound.unload(); },
+  // onend: () => { answersound.unload(); },
   sprite: {
     wrong1: [0, 1000],    
     wrong2: [1090, 1345], 
