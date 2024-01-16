@@ -69,6 +69,7 @@ function shuffleArray(array) {
 }
 
 function displayStatement() {
+    answersound.play(NEXT);
     document.getElementById("statement").innerText = statements[currentStatementIndex].question;
     document.getElementById("answer").innerText = "";
     document.getElementById("check-mark").style.display = 'none';
@@ -125,7 +126,6 @@ function resetGame() {
 document.getElementById("fact-button").addEventListener("click", function() { checkAnswer(true); });
 document.getElementById("myth-button").addEventListener("click", function() { checkAnswer(false); });
 document.getElementById("next-button").addEventListener("click", function() {
-answersound.play(NEXT);
 currentStatementIndex++;
 if (currentStatementIndex < 10 && currentStatementIndex < statements.length) {
 displayStatement();
