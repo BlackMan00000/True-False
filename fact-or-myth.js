@@ -1,26 +1,3 @@
-var answersound = new Howl({
-  src: ['https://matt.moses.name/sites/P34A/sounds/answersounds.mp3'], // Replace with the path to your sound file
-  preload: true,
-  autoplay: false,
-  loop: false,
-  html5: true,
-  // onend: () => { answersound.unload(); },
-  sprite: {
-    wrong1: [0, 1000],    
-    wrong2: [1090, 1345], 
-    wrong3: [2554, 2204], 
-    wrong4: [5075, 650],
-    wrong5: [5912, 752],
-    right1: [7366, 1400], 
-    right2: [9138, 1142], 
-    right3: [10922, 1665],
-    right4: [12992, 1455],
-    right5: [14743, 1000],
-    NextBtn: [16934, 1503],
-    Reset: [18343, 1276],
-  }
-});
-
 const statements = [
     { question: "People used dental floss in the old West.", answer: "Dental floss was invented in 1815 by a New Orleans dentist, showing that dental hygiene was a concern even in the old West.", isFact: true },
     { question: "Camels were used in the old West.", answer: "The U.S. Army experimented with using camels in the desert regions of the West for transport.", isFact: true },
@@ -92,7 +69,7 @@ function shuffleArray(array) {
 }
 
 function displayStatement() {
-    answersound.play(NextBtn);
+    answersound.play('NEXT');
     document.getElementById("statement").innerText = statements[currentStatementIndex].question;
     document.getElementById("answer").innerText = "";
     document.getElementById("check-mark").style.display = 'none';
@@ -133,7 +110,7 @@ function checkAnswer(isFact) {
 function resetGame() {
     correctCount = 0;
     incorrectCount = 0;
-    answersound.play(Reset);
+    answersound.play('RESET');
     document.getElementById("feedback").innerText = "";
     document.getElementById("correct-count").innerText = correctCount;
     document.getElementById("incorrect-count").innerText = incorrectCount;
