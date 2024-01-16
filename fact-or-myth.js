@@ -78,6 +78,14 @@ const statements = [
     { question: "Drugs were common and legal in the old West.", answer: "During the heyday of the Old West, drugs were pretty common and legal. The Chinese introduced opium when they came to America to build railroad lines.", isFact: true },
     { question: "The West was a man's world.", answer: "Women played significant roles in the development and culture of the Old West.", isFact: false },
     { question: "Wyatt Earp wasn't just a lawman.", answer: "Wyatt Earp also worked as a buffalo hunter, miner, boxing referee, and saloon keeper.", isFact: true },
+    { question: "Old West settlers succeeded through individualism.", answer: "Communities often formed mutual aid groups, churches, and social organizations, highlighting the importance of community support over the lone cowboy narrative.", isFact: false},
+    { question: "Mail-order brides were common among men.", answer: "Due to the scarcity of women, men often sought brides through mail-order advertisements in newspapers.", isFact: true },
+    { question: "Some western towns were hangouts for outlaws.", answer: "Some towns, like Hole-in-the-Wall in Wyoming, were known as safe havens for outlaws.", isFact: true },
+    { question: "Saloons were sometimes used as schoolhouses.", answer: "Some Western towns used saloons as schoolhouses during the day, reflecting the multifunctional use of buildings in small communities.", isFact: true },
+    { question: "Champagne was available in most saloons.", answer: "European wines and champagnes were rare and expensive, as importing them was challenging due to long travel times and the lack of proper storage facilities during transit.", isFact: false},
+    { question: "Whiskey on-the-rocks was a popular drink in Old West saloons.", answer: "Refrigeration was non-existent, so any beverage that was best served cold, like certain beers or chilled wines, was hard to come by in its ideal serving condition.", isFact: false},
+    { question: "A Sarsaparilla is a kind of root beer beverage.", answer: "A non-alcoholic option, sarsaparilla was a popular soft drink, similar to root beer. It was often available for those who didn't drink alcohol or as a refreshment for children.", isFact: true },
+    { question: "Every town in the Old West had a sheriff.", answer: "Not every town in the Old West had a sheriff. Some settlements enforced laws through community meetings or by appointing a respected local citizen to keep order.", isFact: false},
     // Add all your statements here
 ];
 
