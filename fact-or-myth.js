@@ -1,3 +1,28 @@
+
+var answersound = new Howl({
+  src: ['https://matt.moses.name/sites/P34A/sounds/answersounds.mp3'], // Replace with the path to your sound file
+  preload: true,
+  autoplay: false,
+  loop: false,
+  html5: true,
+  onend: () => { answersound.unload(); },
+  sprite: {
+    wrong1: [0, 1000],    
+    wrong2: [1090, 1345], 
+    wrong3: [2554, 2204], 
+    wrong4: [5075, 650],
+    wrong5: [5912, 752],
+    right1: [7366, 1400], 
+    right2: [9138, 1142], 
+    right3: [10922, 1665],
+    right4: [12992, 1455],
+    right5: [14743, 1000],
+    NEXT: [16934, 1503],
+    RESET: [18343, 1276],
+  }
+});
+      
+
 const statements = [
     { question: "People used dental floss in the old West.", answer: "Dental floss was invented in 1815 by a New Orleans dentist, showing that dental hygiene was a concern even in the old West.", isFact: true },
     { question: "Camels were used in the old West.", answer: "The U.S. Army experimented with using camels in the desert regions of the West for transport.", isFact: true },
