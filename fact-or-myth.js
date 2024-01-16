@@ -50,13 +50,13 @@ let incorrectCount = 0;
 // Function to play a random sound effect
 function playRandomWrong() {
   var effects1 = ['wrong1', 'wrong2', 'wrong3', 'wrong4', 'wrong5'];
-  var randomEffect1 = effects[Math.floor(Math.random() * effects.length)];
+  var randomEffect1 = effects1[Math.floor(Math.random() * effects1.length)];
   answersound.play(randomEffect1);
 }
 
 function playRandomRight() {
   var effects2 = ['right1', 'right2', 'right3', 'right4', 'right5'];
-  var randomEffect2 = effects[Math.floor(Math.random() * effects.length)];
+  var randomEffect2 = effects2[Math.floor(Math.random() * effects2.length)];
   answersound.play(randomEffect2);
 }
 
@@ -109,6 +109,7 @@ function checkAnswer(isFact) {
 function resetGame() {
     correctCount = 0;
     incorrectCount = 0;
+    answersound.play(RESET);
     document.getElementById("feedback").innerText = "";
     document.getElementById("correct-count").innerText = correctCount;
     document.getElementById("incorrect-count").innerText = incorrectCount;
@@ -124,6 +125,7 @@ function resetGame() {
 document.getElementById("fact-button").addEventListener("click", function() { checkAnswer(true); });
 document.getElementById("myth-button").addEventListener("click", function() { checkAnswer(false); });
 document.getElementById("next-button").addEventListener("click", function() {
+answersound.play(NEXT);
 currentStatementIndex++;
 if (currentStatementIndex < 10 && currentStatementIndex < statements.length) {
 displayStatement();
