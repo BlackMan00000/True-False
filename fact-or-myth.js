@@ -47,6 +47,20 @@ let currentStatementIndex = 0;
 let correctCount = 0;
 let incorrectCount = 0;
 
+// Function to play a random sound effect
+function playRandomWrong() {
+  var effects1 = ['wrong1', 'wrong2', 'wrong3', 'wrong4', 'wrong5'];
+  var randomEffect1 = effects[Math.floor(Math.random() * effects.length)];
+  answersound.play(randomEffect1);
+}
+
+function playRandomRight() {
+  var effects2 = ['right1', 'right2', 'right3', 'right4', 'right5'];
+  var randomEffect2 = effects[Math.floor(Math.random() * effects.length)];
+  answersound.play(randomEffect2);
+}
+
+
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -75,10 +89,12 @@ function checkAnswer(isFact) {
     let isCorrect = statements[currentStatementIndex].isFact === isFact;
     updateScore(isCorrect);
         if (isCorrect) {
+        playRandomRight();
         document.getElementById("check-mark").style.display = 'block';
         document.getElementById("red-x").style.display = 'none';
         // Correct.play();
     } else {
+        playRandomWrong();
         document.getElementById("check-mark").style.display = 'none';
         document.getElementById("red-x").style.display = 'block';
         // Incorrect.play();
