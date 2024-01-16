@@ -4,7 +4,7 @@ var answersound = new Howl({
   autoplay: false,
   loop: false,
   html5: true,
-  onend: () => { answersound.unload(); },
+  // onend: () => { answersound.unload(); },
   sprite: {
     wrong1: [0, 1000],    
     wrong2: [1090, 1345], 
@@ -16,8 +16,8 @@ var answersound = new Howl({
     right3: [10922, 1665],
     right4: [12992, 1455],
     right5: [14743, 1000],
-    NEXTBTN: [16934, 1503],
-    RESET: [18343, 1276],
+    NextBtn: [16934, 1503],
+    Reset: [18343, 1276],
   }
 });
 
@@ -92,7 +92,7 @@ function shuffleArray(array) {
 }
 
 function displayStatement() {
-    answersound.play(NEXTBTN);
+    answersound.play(NextBtn);
     document.getElementById("statement").innerText = statements[currentStatementIndex].question;
     document.getElementById("answer").innerText = "";
     document.getElementById("check-mark").style.display = 'none';
@@ -133,7 +133,7 @@ function checkAnswer(isFact) {
 function resetGame() {
     correctCount = 0;
     incorrectCount = 0;
-    answersound.play(RESET);
+    answersound.play(Reset);
     document.getElementById("feedback").innerText = "";
     document.getElementById("correct-count").innerText = correctCount;
     document.getElementById("incorrect-count").innerText = incorrectCount;
