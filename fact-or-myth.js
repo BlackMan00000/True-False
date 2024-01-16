@@ -16,7 +16,7 @@ var answersound = new Howl({
     right3: [10922, 1665],
     right4: [12992, 1455],
     right5: [14743, 1000],
-    NEXT: [16934, 1503],
+    NEXTBTN: [16934, 1503],
     RESET: [18343, 1276],
   }
 });
@@ -92,7 +92,7 @@ function shuffleArray(array) {
 }
 
 function displayStatement() {
-    answersound.play(NEXT);
+    answersound.play(NEXTBTN);
     document.getElementById("statement").innerText = statements[currentStatementIndex].question;
     document.getElementById("answer").innerText = "";
     document.getElementById("check-mark").style.display = 'none';
